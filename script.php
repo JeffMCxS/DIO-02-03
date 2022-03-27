@@ -19,6 +19,27 @@ $idade = $_POST['idade'];
 //var_dump($nome);
 //var_dump($idade);
 
+if (empty($nome)) { //Verifica se a variável está vazia
+    echo 'O nome não pode estar vazio.';
+    return;
+}
+
+if (strlen($nome) < 3) { //Verifica a qtd de caracteres na string
+    echo 'O nome deve conter mais que 3 caracteres';
+    return;
+}
+
+if (strlen($nome) > 40) { //Verifica a qtd de caracteres na string
+    echo 'O nome é muito extenso';
+    return;
+}
+
+if (!is_numeric($idade)) {
+    echo "Informe um número válido";
+    return;
+}
+
+
 if ($idade >= 6 && $idade <= 12) {
     //echo 'infantil';
     for ($i = 0; $i <= count($categorias); $i++) {
