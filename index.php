@@ -1,6 +1,6 @@
 <?php
-
-    session_start(); //Este comando deve estar sempre no início do script
+include "servicos/servicoMensagemSessao.php";
+    //session_start(); //Este comando deve estar sempre no início do script
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +22,11 @@
 <!--<form action="script.php" method="get">-->
 <form action="script.php" method="post">
     <?php
-        $mensagemDeSucesso = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
+        $mensagemDeSucesso = obterMensagemSucesso();
     if (!empty($mensagemDeSucesso)) {
         echo $mensagemDeSucesso;
     }
-        $mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+        $mensagemDeErro = obterMensagemErro();
     if (!empty($mensagemDeErro)) {
         echo $mensagemDeErro;
     }
