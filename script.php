@@ -16,27 +16,7 @@ $categorias[] = 'idoso';
 $nome = $_POST['nome'];
 $idade = $_POST['idade'];
 
-if (empty($nome)) {
-//Verifica se a variável está vazia
-    $_SESSION['mensagem-de-erro'] = 'O nome não pode estar vazio.';
-    header('location: index.php');
-    return;
-} elseif (strlen($nome) < 3) {
-//Verifica a qtd de caracteres na string
-    $_SESSION['mensagem-de-erro'] = 'O nome deve conter mais que 3 caracteres.';
-    header('location: index.php');
-    return;
-} elseif (strlen($nome) > 40) {
-//Verifica a qtd de caracteres na string
-    $_SESSION['mensagem-de-erro'] = 'O nome não deve conter mais que 40 caracteres.';
-    header('location: index.php');
-    return;
-} elseif (!is_numeric($idade)) {
-//Verifica se é um número
-    $_SESSION['mensagem-de-erro'] = 'Informe um número válido.';
-    header('location: index.php');
-    return;
-}
+
 
 
 if ($idade >= 6 && $idade <= 12) {
